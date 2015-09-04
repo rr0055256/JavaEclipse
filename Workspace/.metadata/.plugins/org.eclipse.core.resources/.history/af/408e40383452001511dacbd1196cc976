@@ -1,0 +1,24 @@
+package com.example.client;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+
+public class DailyAdviceServer {
+	
+	String[] adviceList = {"Take smaller bites","Go for the tight jeans.No they do not make you look fat.","One word:inappropriate","Just for today, be honest. Tell your bosswhat you *really* think","You might want to rethink that haircut"};
+	
+	public void go(){
+		try {
+			//this makes the serversocket listen to client requests coming on 4242
+			ServerSocket serverSock = new ServerSocket(4242);
+			
+			while(true){
+				
+			}
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

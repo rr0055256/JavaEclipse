@@ -1,0 +1,22 @@
+package com.dbconnection;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DbConnection {
+	public static void main(String[] args) {
+		connectDB();
+		
+	}
+	public static void connectDB(){
+		Connection c = null;
+		try {
+			//initializes the connection
+			Class.forName("org.sqlite.JDBC");
+			c = DriverManager.getConnection("jdbc:sqlite:myBlog.sqlite")
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

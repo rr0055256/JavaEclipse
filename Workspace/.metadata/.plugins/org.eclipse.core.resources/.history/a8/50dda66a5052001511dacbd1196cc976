@@ -1,0 +1,36 @@
+package com.example.ryanmonica;
+
+public class RyanAndMonicaJob implements Runnable{
+	
+	private BankAccount account = new BankAccount();
+	
+	public static void main(String[] args) {
+		RyanAndMonicaJob theJob = new RyanAndMonicaJob();
+		Thread one = new Thread(theJob);
+		Thread two = new Thread(theJob);
+		
+		//define names
+		one.setName("Ryan");
+		two.setName("Monica");
+		
+		one.start();
+		two.start();
+	}
+
+	@Override
+	public void run() {
+		for(int x=0;x<10;x++)
+		{
+			makeWithdrawl(10);
+			if(account.getBalance()<0){
+				System.out.println("Overwithdrawn!!");
+			}
+		}
+		
+	}
+
+	private void makeWithdrawl(int amount) {
+		if(account.getBalance()>= amount)
+		
+	}
+}

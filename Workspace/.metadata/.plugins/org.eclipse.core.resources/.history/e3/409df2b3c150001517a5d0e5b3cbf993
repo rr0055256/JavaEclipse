@@ -1,0 +1,11 @@
+package com.dbconnection;
+
+public class DbConnection {
+	public static void main(String[] args) {
+		connectDB();
+		
+	}
+	public static void connectDB(){
+		
+	}
+}

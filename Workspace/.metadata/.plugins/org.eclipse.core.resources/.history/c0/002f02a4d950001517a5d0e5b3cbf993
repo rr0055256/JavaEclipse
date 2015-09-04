@@ -1,0 +1,79 @@
+package com.dbconnection;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DbConnection {
+	public static void main(String[] args) {
+		connectDB();
+		createDB();
+	}
+	public static void connectDB(){
+		Connection c = null;
+		try {
+			//initializes the connection
+			Class.forName("org.sqlite.JDBC");
+			c = DriverManager.getConnection("jdbc:sqlite:myBlog.sqlite");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("Opened database successfully");
+	}
+	
+	public static void createDB(){
+		Connection c = null;
+		Statement stmt = null;
+		try {
+			Class.forName("org.sqlite.JDBC");
+			c = DriverManager.getConnection("jdbc:sqlite:myBlog.sqlite");
+			System.out.println("Opened database successfully");
+			
+			stmt = c.createStatement();
+			String sql =  "CREATE TABLE web_blog" +
+							"(ID INTEGER PRIMARY KEY autoincrement," +
+							"NAME CHAR(50) NOT NULL," +
+							"message TEXT NOT NULL," +
+							"date_added	datetime)";
+			
+			stmt.execute(sql);
+			stmt.close();
+			c.close();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("Table created successfully");
+	}
+	
+	public static void insertDB(){
+		Connection c = null;
+		Statement stmt = null;
+		
+		try {
+			Class.forName("org.sqlite.JDBC");
+			c=DriverManager.getConnection("jdbc:sqlite:myBlog.sqlite");
+			c.setAutoCommit(false);
+			System.out.println("Opened statbase successfully");
+			
+			stmt = c.createStatement();
+			String sql = "INSERT into web_log (NAME,message,date_added) " +
+						"VALUES('Ken','Hello every one!!!'), datetime()" +
+						"('Jim', 'whats up!!!', datetime());";
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("Records inserted successfully");
+		
+	}
+	
+}

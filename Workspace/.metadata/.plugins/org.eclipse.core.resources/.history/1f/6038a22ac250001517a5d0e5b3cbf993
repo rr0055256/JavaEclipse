@@ -1,0 +1,19 @@
+package com.dbconnection;
+
+import java.sql.Connection;
+
+public class DbConnection {
+	public static void main(String[] args) {
+		connectDB();
+		
+	}
+	public static void connectDB(){
+		Connection c = null;
+		try {
+			Class.forName("org.sqlite.JDBC");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

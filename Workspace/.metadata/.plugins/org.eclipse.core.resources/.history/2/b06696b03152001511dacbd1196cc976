@@ -1,0 +1,12 @@
+package com.example.client;
+
+import java.net.Socket;
+
+public class DailyAdviceClient {
+
+		public void go{
+//			make a connection to the socket
+			Socket s = new Socket("127.0.0.1", 4242);
+			
+		}
+}

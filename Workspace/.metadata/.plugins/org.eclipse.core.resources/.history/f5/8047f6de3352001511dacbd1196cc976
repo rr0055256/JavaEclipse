@@ -1,0 +1,12 @@
+package com.example.client;
+
+import java.net.ServerSocket;
+
+public class DailyAdviceServer {
+	
+	String[] adviceList = {"Take smaller bites","Go for the tight jeans.No they do not make you look fat.","One word:inappropriate","Just for today, be honest. Tell your bosswhat you *really* think","You might want to rethink that haircut"};
+	
+	public void go(){
+		ServerSocket serverSock = new ServerSocket(4242);
+	}
+}

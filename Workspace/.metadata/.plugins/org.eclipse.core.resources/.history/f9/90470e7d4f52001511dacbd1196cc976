@@ -1,0 +1,20 @@
+package com.example.ryanmonica;
+
+public class RyanAndMonicaJob implements Runnable{
+	
+	private BankAccount account = new BankAccount();
+	
+	public static void main(String[] args) {
+		RyanAndMonicaJob theJob = new RyanAndMonicaJob();
+		Thread one = new Thread(theJob);
+		Thread two = new Thread(theJob);
+		
+		
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+}

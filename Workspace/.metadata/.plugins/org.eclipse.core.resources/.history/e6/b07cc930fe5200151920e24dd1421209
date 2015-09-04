@@ -1,0 +1,25 @@
+package com.example.chat;
+
+import java.io.BufferedReader;
+import java.net.Socket;
+import java.util.ArrayList;
+
+public class VerySimpleChatServer {
+
+		ArrayList ClientOutputStreams;
+		
+		public class ClientHandler implements Runnable{
+			BufferedReader reader;
+			Socket sock;
+			
+			public ClientHandler(Socket clientSocket){
+				
+			}
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+			
+			}
+			
+		}
+}
